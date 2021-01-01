@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "checkJs": false,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@ts": [
+        "ts/dist/index"
+      ]
+    },
+    "jsx": "preserve"
+  },
+  "typeAcquisition": {
+    "enable": true,
+    "include": [
+      "./typings/index.d.ts"
+    ]
+  },
+  "include": [
+    "src",
+    "typings"
+  ]
+}
