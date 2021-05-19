@@ -27,14 +27,15 @@ app.get('/toolsapi/hello', async (req, res) => {
 })
 app.post('/toolsapi/file/create', async (req, res) => {
   const reqParams = req.body;
+  const name = reqParams.name || '可爱';
   fs.writeFile(
-    "/Users/laststory/Desktop/" + "test.txt",
-    reqParams.content,
+    `${require('os').homedir()}/Desktop/${name}.txt`,
+    '',
     function(err) {
       if (err) {
         res.send({ code: 400, data: err})
       }
-      res.send({ code: 200, data: '', msg: 'success' })
+      res.send({ code: 200, data: { name: `${name}.txt` }, msg: 'success' })
     }
   );
 })
